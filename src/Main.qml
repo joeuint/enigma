@@ -90,7 +90,10 @@ Kirigami.ApplicationWindow {
                     text: "test"
                     Kirigami.FormData.label: "Content"
                 }
-                
+
+                Controls.Button {
+                    onClicked: backend.sayHello()
+                }
             }
         }
     }

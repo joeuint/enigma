@@ -10,6 +10,7 @@ ecm_add_qml_module(enigma
 target_sources(enigma
     PRIVATE
     main.cpp
+    backend.cpp
 )
 
 ecm_target_qml_sources(enigma

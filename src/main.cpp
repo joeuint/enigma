@@ -6,6 +6,9 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KIconTheme>
+#include <memory>
+
+#include "backend.hpp"
 
 int main(int argc, char *argv[])
 {
@@ -23,6 +26,10 @@ int main(int argc, char *argv[])
     }
 
     QQmlApplicationEngine engine;
+
+    auto* backend = new GlobalBackend();
+
+    engine.rootContext()->setContextProperty(QStringLiteral("backend"), backend);
 
     engine.rootContext()->setContextObject(new KLocalizedContext(&engine));
     engine.loadFromModule("com.josephumana.enigma", "Main");
