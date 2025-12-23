@@ -6,13 +6,16 @@ import org.kde.kirigami as Kirigami
 
 // Provides basic features needed for all kirigami applications
 Kirigami.ApplicationWindow {
+    wideScreen: false
     // Unique identifier to reference this object
     id: root
 
     width: 400
     height: 300
 
-    // Window title
+    maximumWidth: 700
+    maximumHeight: 350
+
     // i18nc() makes a string translatable
     // and provides additional context for the translators
     title: "Hello World"
@@ -65,14 +68,27 @@ Kirigami.ApplicationWindow {
     Component {
         id: hashPage
         Kirigami.Page {
-            ColumnLayout {
+            Kirigami.FormLayout {
+                anchors.fill: parent
                 Kirigami.Heading {
+                    font.weight: Font.DemiBold
+                    font.pointSize: 18
+                    font.underline: true
+                    level: 1
+                    Layout.alignment: Qt.AlignHCenter
                     text: "Hashing"
                 }
 
                 Controls.ComboBox {
                     id: algo
-                    model: ["SHA-256", "SHA512"]
+                    model: ["SHA-256", "SHA-512"]
+                    Kirigami.FormData.label: "Algorithm"
+                }
+
+                Controls.TextField {
+                    id: content
+                    text: "test"
+                    Kirigami.FormData.label: "Content"
                 }
                 
             }
