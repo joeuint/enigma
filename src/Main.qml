@@ -15,11 +15,12 @@ Kirigami.ApplicationWindow {
     // Window title
     // i18nc() makes a string translatable
     // and provides additional context for the translators
-    title: i18nc("@title:window", "Hello World")
+    title: "Hello World"
 
     // Set the first page that will be loaded when the app opens
     // This can also be set to an id of a Kirigami.Page
     pageStack.initialPage: Kirigami.Page {
+        id: titlePage
         ColumnLayout {
             anchors.fill: parent
 
@@ -52,11 +53,28 @@ Kirigami.ApplicationWindow {
 
                 Controls.Button {
                     text: "Hash"
+                    onClicked: pageStack.push(hashPage)
                 }
 
                 Controls.Button {
                     text: "Sign"
                 }
+            }
+        }
+    }
+    Component {
+        id: hashPage
+        Kirigami.Page {
+            ColumnLayout {
+                Kirigami.Heading {
+                    text: "Hashing"
+                }
+
+                Controls.ComboBox {
+                    id: algo
+                    model: ["SHA-256", "SHA512"]
+                }
+                
             }
         }
     }
