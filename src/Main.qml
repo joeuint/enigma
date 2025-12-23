@@ -41,7 +41,7 @@ Kirigami.ApplicationWindow {
                 Layout.alignment: Qt.AlignHCenter
                 horizontalAlignment: Text.AlignHCenter
                 wrapMode: Text.WordWrap
-                text: "Enigma is a program created to make cryptography acessible for all!"
+                text: "Enigma is a program created to make cryptography accessible for all!"
             }
 
             RowLayout {
