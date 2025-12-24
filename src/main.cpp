@@ -6,7 +6,6 @@
 #include <KLocalizedContext>
 #include <KLocalizedString>
 #include <KIconTheme>
-#include <memory>
 
 #include "backend.hpp"
 
